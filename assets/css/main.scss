@@ -1,0 +1,110 @@
+/* assets/css/main.scss */
+
+/* IMPORTANTE: Importar a fonte Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+/* 1. PALETA E CONFIGURAÇÕES GLOBAIS */
+:root {
+  --agne-black: #050505;
+  --agne-dark: #121212;
+  --agne-orange: #ff4500;
+  --agne-white: #ffffff;
+  --agne-gray: #a0a0a0;
+}
+
+html, body {
+  background-color: var(--agne-black);
+  color: var(--agne-white);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  
+  /* FONTE FINA (Antialiasing) */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* 2. TRAVA DE SEGURANÇA CONTRA NEGRITO */
+b, strong {
+  font-weight: 500 !important; 
+}
+
+/* 3. COMPORTAMENTO DESKTOP (Monitores > 1024px) */
+@media (min-width: 1024px) {
+  html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    height: 100vh;
+    overflow-y: scroll;
+  }
+
+  /* --- MUDANÇA AQUI: Tirei o 'footer' dessa regra --- */
+  /* Apenas as SEÇÕES principais ocupam a tela toda */
+  section {
+    height: 100vh;            
+    width: 100%;
+    scroll-snap-align: start; 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto; 
+    overflow-x: hidden;
+  }
+  
+  /* --- NOVA REGRA PARA O FOOTER --- */
+  /* O Rodapé agora tem altura livre (automática) */
+  footer {
+     height: auto !important;     /* Altura natural do conteúdo */
+     min-height: auto !important; /* Remove obrigação de altura mínima */
+     width: 100%;
+     position: relative;
+     
+     /* O PULO DO GATO: */
+     /* 'end' faz o imã colar o final do rodapé no final da tela, */
+     /* permitindo que ele seja menor que a tela sem quebrar a rolagem */
+     scroll-snap-align: end; 
+     
+     display: block; /* Fluxo normal */
+  }
+}
+
+/* 4. COMPORTAMENTO MOBILE (Celulares e Tablets) */
+@media (max-width: 1023px) {
+  html {
+    scroll-snap-type: none;
+    height: auto;
+    overflow-y: auto;
+  }
+
+  section, footer {
+    min-height: 100vh;
+    height: auto;
+    padding-bottom: 60px;
+    scroll-snap-align: none;
+    display: block;
+  }
+  
+  /* Ajuste fino para o footer no mobile não precisar ser 100vh se não tiver conteúdo */
+  footer {
+    min-height: auto; 
+    padding-bottom: 40px;
+  }
+}
+
+/* 5. SCROLLBAR CUSTOMIZADA */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--agne-black); 
+}
+::-webkit-scrollbar-thumb {
+  background: #333; 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--agne-orange); 
+}
