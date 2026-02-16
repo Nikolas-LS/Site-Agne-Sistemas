@@ -21,7 +21,7 @@ export default defineNuxtConfig({
   },
 
   css: [
-    'C:/Site-Agne-Sistemas/assets/css/main.scss', // Nosso estilo global
+    '~/assets/css/main.scss', // Nosso estilo global (caminho relativo)
     'aos/dist/aos.css'        // Estilo das animações
   ],
 
