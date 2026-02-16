@@ -16,13 +16,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Use Node.js 18
+      - name: Use Node.js 20 (required by Nuxt/Vite)
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20.19.0'
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Rebuild native modules (fallback)
+        # some native bindings can fail to build on first install; rebuilding helps
+        run: npm rebuild || true
 
       - name: Generate static site
         run: npm run generate
