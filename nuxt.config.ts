@@ -28,6 +28,6 @@ export default defineNuxtConfig({
   app: {
     // IMPORTANTE: Se o nome do seu repositório no GitHub for diferente, mude aqui!
     // Exemplo: se for 'site-agne', coloque '/site-agne/'
-    baseURL: '/agne-landing-page/'
+    baseURL: '/Site-Agne-Sistemas/'
   }
 })
