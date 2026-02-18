@@ -1,34 +1,34 @@
 <template>
-  <section id="resources" class="relative w-full min-h-screen bg-[#050505] py-24 overflow-hidden border-t border-white/5">
+  <section id="resources" class="relative w-full min-h-screen bg-gray-100 dark:bg-[#050505] py-20 sm:py-24 overflow-hidden border-t border-gray-200 dark:border-white/5 transition-colors duration-300">
     
     <div class="absolute inset-0 pointer-events-none">
-      <div class="absolute left-0 top-1/4 w-96 h-96 bg-white rounded-full blur-[150px] opacity-5"></div>
-      <div class="absolute right-0 bottom-1/4 w-96 h-96 bg-gray-800 rounded-full blur-[150px] opacity-5"></div>
+      <div class="absolute left-0 top-1/4 w-64 h-64 sm:w-96 sm:h-96 bg-gray-300 dark:bg-white rounded-full blur-[100px] sm:blur-[150px] opacity-20 dark:opacity-5 transition-colors duration-300"></div>
+      <div class="absolute right-0 bottom-1/4 w-64 h-64 sm:w-96 sm:h-96 bg-gray-400 dark:bg-gray-800 rounded-full blur-[100px] sm:blur-[150px] opacity-20 dark:opacity-5 transition-colors duration-300"></div>
     </div>
 
-    <div class="container mx-auto px-6 relative z-10">
+    <div class="container mx-auto px-4 sm:px-6 relative z-10">
       
-      <div class="text-center mb-16" data-aos="fade-up">
-          <div class="inline-flex items-center space-x-3 bg-white/5 border border-white/10 rounded-full px-5 py-2 mb-6 backdrop-blur-sm">
-            <span class="w-2.5 h-2.5 rounded-full bg-white animate-pulse shadow-[0_0_10px_rgba(255,255,255,0.8)]"></span>
-            <span class="text-sm font-medium text-gray-300 uppercase tracking-widest">Recursos</span>
-          </div>
+      <div class="text-center mb-10 sm:mb-16" data-aos="fade-up">
+        <div class="inline-flex items-center space-x-3 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-full px-4 py-1.5 sm:px-5 sm:py-2 mb-4 sm:mb-6 backdrop-blur-sm transition-colors duration-300">
+          <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-gray-800 dark:bg-white animate-pulse shadow-sm dark:shadow-[0_0_10px_rgba(255,255,255,0.8)]"></span>
+          <span class="text-[10px] sm:text-sm font-medium text-gray-600 dark:text-gray-300 uppercase tracking-widest">Recursos</span>
+        </div>
         
-        <h2 class="text-3xl md:text-5xl font-medium tracking-tight text-white mb-4">
+        <h2 class="text-2xl sm:text-3xl md:text-5xl font-medium tracking-tight text-gray-900 dark:text-white mb-4 transition-colors duration-300">
           Poder Total para <br/>
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-500 dark:from-white dark:to-gray-500">
             Sua Construção
           </span>
         </h2>
       </div>
 
-      <div class="relative px-4 md:px-12">
+      <div class="relative px-0 md:px-12">
         
-        <button class="custom-prev absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-white hover:text-black hover:scale-110 transition-all duration-300 backdrop-blur-md hidden md:flex">
+        <button class="custom-prev absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 flex items-center justify-center text-gray-700 dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black hover:scale-110 transition-all duration-300 backdrop-blur-md hidden md:flex shadow-md dark:shadow-none">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
         </button>
 
-        <button class="custom-next absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-white hover:text-black hover:scale-110 transition-all duration-300 backdrop-blur-md hidden md:flex">
+        <button class="custom-next absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 flex items-center justify-center text-gray-700 dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black hover:scale-110 transition-all duration-300 backdrop-blur-md hidden md:flex shadow-md dark:shadow-none">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
         </button>
 
@@ -36,7 +36,7 @@
           :modules="[SwiperAutoplay, SwiperPagination, SwiperNavigation]"
           :slides-per-view="1"
           :centered-slides="true"
-          :space-between="30"
+          :space-between="15"
           :loop="true"
           :autoplay="{ delay: 4000, disableOnInteraction: false }"
           :pagination="{ clickable: true, dynamicBullets: true }"
@@ -45,32 +45,33 @@
             prevEl: '.custom-prev',
           }"
           :breakpoints="{
+            '340': { slidesPerView: 1, spaceBetween: 15 },
             '640': { slidesPerView: 1, spaceBetween: 20 },
             '768': { slidesPerView: 2, spaceBetween: 30 },
             '1024': { slidesPerView: 3, spaceBetween: 40 },
           }"
-          class="features-swiper pb-16 !overflow-visible"
+          class="features-swiper pb-12 sm:pb-16 !overflow-visible"
         >
-          <swiper-slide v-for="(card, index) in cards" :key="index" class="h-auto py-10">
-            <div class="card-content h-full bg-[#0f0f0f] border border-white/10 rounded-2xl p-8 flex flex-col transition-all duration-500 ease-out group relative overflow-hidden">
+          <swiper-slide v-for="(card, index) in cards" :key="index" class="h-auto py-6 sm:py-10">
+            <div class="card-content h-full bg-white dark:bg-[#0f0f0f] border border-gray-200 dark:border-white/10 rounded-2xl p-6 sm:p-8 flex flex-col transition-all duration-500 ease-out group relative overflow-hidden shadow-lg dark:shadow-none">
               
-              <div class="absolute top-0 right-0 w-32 h-32 bg-white rounded-full blur-[80px] opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none"></div>
+              <div class="absolute top-0 right-0 w-32 h-32 bg-gray-200 dark:bg-white rounded-full blur-[80px] opacity-0 group-hover:opacity-20 dark:group-hover:opacity-10 transition-opacity duration-500 pointer-events-none"></div>
 
-              <div class="w-14 h-14 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-white group-hover:text-black transition-all duration-300 shrink-0 icon-container">
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="w-12 h-12 sm:w-14 sm:h-14 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl flex items-center justify-center mb-4 sm:mb-6 text-gray-900 dark:text-white group-hover:bg-black group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-black transition-all duration-300 shrink-0 icon-container">
+                <svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" :d="card.iconPath"></path>
                 </svg>
               </div>
 
-              <h3 class="text-lg font-medium text-white uppercase tracking-wide mb-4">
+              <h3 class="text-base sm:text-lg font-medium text-gray-900 dark:text-white uppercase tracking-wide mb-3 sm:mb-4 transition-colors">
                 {{ card.title }}
               </h3>
 
-              <div class="text-gray-400 text-sm font-light leading-relaxed space-y-2 flex-grow">
+              <div class="text-gray-600 dark:text-gray-400 text-sm font-light leading-relaxed space-y-2 flex-grow transition-colors">
                 <template v-if="Array.isArray(card.content)">
                   <ul class="space-y-2">
                     <li v-for="(item, i) in card.content" :key="i" class="flex items-start">
-                      <span class="mr-2 mt-1.5 w-1 h-1 rounded-full bg-gray-600 group-hover:bg-white transition-colors shrink-0"></span>
+                      <span class="mr-2 mt-1.5 w-1 h-1 rounded-full bg-gray-400 dark:bg-gray-600 group-hover:bg-black dark:group-hover:bg-white transition-colors shrink-0"></span>
                       {{ item }}
                     </li>
                   </ul>
@@ -84,7 +85,12 @@
           </swiper-slide>
         </swiper>
       </div>
-
+      <div class="mt-12 sm:mt-16 text-center max-w-2xl mx-auto px-4" data-aos="fade-up" data-aos-delay="100">
+        <p class="text-gray-800 dark:text-gray-200 text-sm sm:text-base font-light leading-relaxed">
+        E isso é apenas o começo. Nossa equipe lança 
+        <span class="text-gray-900 dark:text-white font-medium border-b border-gray-300 dark:border-white/20 pb-0.5">novas atualizações todos os meses</span>, mantendo sua loja sempre à frente do mercado.
+        </p>
+      </div>
     </div>
   </section>
 </template>
@@ -100,7 +106,6 @@ const SwiperAutoplay = Autoplay;
 const SwiperPagination = Pagination;
 const SwiperNavigation = Navigation;
 
-// Aqui definimos o 'iconPath' (o desenho do SVG) diretamente.
 const cards = [
   {
     title: 'Especialização',
@@ -149,7 +154,7 @@ const cards = [
   },
   {
     title: 'Calculadora',
-    iconPath: 'M15.75 15.75V18m-7.5-6.75h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25V13.5zm0 2.25h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25V18zm2.498-6.75h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V13.5zm0 2.25h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V18m2.504-6.75h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V13.5zm0 2.25h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V18m2.498-6.75h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V13.5d.225.225 0 01.225-.225H15a.225.225 0 01.225.225v1.5a.225.225 0 01-.225.225h-3a.225.225 0 01-.225-.225v-1.5a.225.225 0 01.225-.225z',
+    iconPath: 'M15.75 15.75V18m-7.5-6.75h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25V13.5zm0 2.25h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25V18zm2.498-6.75h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V13.5zm0 2.25h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V18m2.504-6.75h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V13.5d.225.225 0 01.225-.225H15a.225.225 0 01.225.225v1.5a.225.225 0 01-.225.225h-3a.225.225 0 01-.225-.225v-1.5a.225.225 0 01.225-.225z',
     content: ['Produtos para instalação', 'Controle das Perdas', 'Medidas por Área', 'Comprimento e Largura']
   },
   {
@@ -166,31 +171,57 @@ const cards = [
 </script>
 
 <style scoped>
-/* REGRAS PARA O CARD ATIVO (EXPANDIDO) */
+/* REGRAS DE ESCALA PARA O CARD ATIVO */
+
+/* Mobile First (Telas pequenas): Escala muito sutil para não cortar */
 .swiper-slide-active .card-content {
-  background-color: #000000; /* Preto absoluto */
-  border-color: #ffffff;     /* Borda Branca */
-  transform: scale(1.1);     /* Aumenta 10% */
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.15); /* Glow externo */
+  transform: scale(1.02); /* Apenas 2% de aumento */
   z-index: 10;
 }
 
-/* Os cards laterais ficam um pouco mais transparentes */
+/* Telas médias/grandes (md = 768px): Escala maior como era antes */
+@media (min-width: 768px) {
+  .swiper-slide-active .card-content {
+    transform: scale(1.1); /* 10% de aumento */
+  }
+}
+
+/* Estilos de Cores (Mantidos) */
+
+/* Light Mode Active */
+:global(:root:not(.dark)) .swiper-slide-active .card-content {
+  background-color: #ffffff;
+  border-color: #9ca3af; 
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Dark Mode Active */
+:global(.dark) .swiper-slide-active .card-content {
+  background-color: #000000;
+  border-color: #ffffff;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+}
+
 .swiper-slide:not(.swiper-slide-active) .card-content {
   opacity: 0.6;
 }
 
-/* Transições suaves */
 .card-content {
   transform: scale(1);
 }
 
-/* Ajuste das bolinhas de paginação */
+/* Paginação */
 :deep(.swiper-pagination-bullet) {
-  background: #333;
+  background: #9ca3af; 
   opacity: 1;
 }
+:global(.dark) :deep(.swiper-pagination-bullet) {
+  background: #333; 
+}
 :deep(.swiper-pagination-bullet-active) {
+  background: #1f2937; 
+}
+:global(.dark) :deep(.swiper-pagination-bullet-active) {
   background: #fff;
 }
 </style>

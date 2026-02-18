@@ -1,5 +1,5 @@
 <template>
-  <section id="hero" class="relative w-full min-h-screen lg:h-screen flex items-center justify-center bg-black overflow-hidden">
+  <section id="hero" class="relative w-full min-h-screen lg:h-screen flex items-center justify-center bg-gray-900 overflow-hidden">
     
     <div class="absolute inset-0 z-0 pointer-events-none">
       <div class="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-black/30 z-10"></div>
@@ -10,26 +10,26 @@
       />
     </div>
 
-    <div class="container mx-auto px-6 relative z-20 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center h-full w-full py-32 lg:py-0">
+    <div class="container mx-auto px-4 sm:px-6 relative z-20 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center h-full w-full py-24 lg:py-0">
       
       <div class="text-center lg:text-left space-y-6" data-aos="fade-right">
         
-        <span class="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-white text-xs font-medium tracking-widest uppercase backdrop-blur-md">
+        <span class="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-white text-[10px] sm:text-xs font-medium tracking-widest uppercase backdrop-blur-md">
           Especialistas em Construção
         </span>
         
-        <h1 class="text-3xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-tight text-white drop-shadow-lg">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-tight text-white drop-shadow-lg">
           Agilize a Gestão com <br/>
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
             Inovação e Controle
           </span>
         </h1>
         
-        <p class="text-gray-200 text-base md:text-lg lg:text-xl max-w-lg mx-auto lg:mx-0 font-light drop-shadow-md">
+        <p class="text-gray-200 text-sm sm:text-base md:text-lg lg:text-xl max-w-lg mx-auto lg:mx-0 font-light drop-shadow-md">
           Aumente seu faturamento organizando seus processos com o sistema especializado em Lojas de Materiais para Construção.
         </p>
 
-        <div class="flex flex-col md:flex-row items-center justify-center lg:justify-start pt-4">
+        <div class="flex flex-col md:flex-row items-center justify-center lg:justify-start pt-2 sm:pt-4">
           <button
             @click="videoOpen = true"
             @mouseenter="handleMouseEnter"
@@ -38,13 +38,13 @@
             @touchend.passive="handleMouseLeave"
             :class="['video flex items-center justify-center py-2 cursor-pointer group bg-transparent border-none outline-none focus:outline-none', { 'is-hovered': isHovered, 'is-leaving': isLeaving }]"
           >
-            <div class="playBtn flex items-center space-x-4">
-              <svg class="w-16 h-16 flex-shrink-0" viewBox="0 0 213.7 213.7" xmlns="http://www.w3.org/2000/svg">
+            <div class="playBtn flex items-center space-x-3 sm:space-x-4">
+              <svg class="w-12 h-12 sm:w-16 sm:h-16 flex-shrink-0" viewBox="0 0 213.7 213.7" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="106.8" cy="106.8" r="103.3" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="circle opacity-80 group-hover:opacity-100 transition-opacity"></circle>
                 <polygon points="73.5,62.5 148.5,105.8 73.5,149.1" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="triangle"></polygon>
               </svg>
               <div class="text-left">
-                 <p class="subheading text-white font-medium text-base m-0 tracking-wide group-hover:text-gray-300 transition-colors">
+                 <p class="subheading text-white font-medium text-sm sm:text-base m-0 tracking-wide group-hover:text-gray-300 transition-colors">
                   Assista o vídeo
                 </p>
               </div>
@@ -53,33 +53,33 @@
         </div>
       </div>
 
-      <div id="form-area" class="w-full max-w-lg mx-auto lg:ml-auto bg-black/60 backdrop-blur-xl border border-white/10 p-8 md:p-10 rounded-2xl shadow-2xl relative" data-aos="fade-left">
-        <h3 class="text-xl md:text-3xl font-medium text-white mb-2 tracking-tight">Fale com a AGNE</h3>
-        <p class="text-gray-300 text-xs md:text-sm mb-6 font-light">Preencha os campos abaixo para receber nosso contato.</p>
+      <div id="form-area" class="w-full max-w-lg mx-auto lg:ml-auto bg-white/95 dark:bg-black/60 backdrop-blur-xl border border-gray-200 dark:border-white/10 p-5 sm:p-8 md:p-10 rounded-2xl shadow-2xl relative transition-colors duration-300" data-aos="fade-left">
+        <h3 class="text-xl md:text-3xl font-medium text-gray-900 dark:text-white mb-2 tracking-tight">Fale com a AGNE</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-xs md:text-sm mb-4 sm:mb-6 font-light">Preencha os campos abaixo para receber nosso contato.</p>
 
-        <form @submit.prevent="submitForm" class="space-y-6">
+        <form @submit.prevent="submitForm" class="space-y-4 sm:space-y-6">
           
           <div>
-            <label class="block text-xs font-medium text-gray-400 uppercase mb-2 tracking-widest">Nome Completo</label>
-            <input type="text" placeholder="Seu nome" class="w-full bg-white/5 border border-white/20 rounded p-4 text-white focus:border-white focus:bg-white/10 focus:outline-none transition-colors text-sm font-light placeholder-gray-500" required />
+            <label class="block text-[10px] sm:text-xs font-medium text-gray-500 dark:text-gray-400 uppercase mb-1 sm:mb-2 tracking-widest">Nome Completo</label>
+            <input type="text" placeholder="Seu nome" class="w-full bg-gray-50 dark:bg-white/5 border border-gray-300 dark:border-white/20 rounded p-3 sm:p-4 text-gray-900 dark:text-white focus:border-black dark:focus:border-white focus:bg-white dark:focus:bg-white/10 focus:outline-none transition-colors text-sm font-light placeholder-gray-400" required />
           </div>
 
           <div>
-            <label class="block text-xs font-medium text-gray-400 uppercase mb-2 tracking-widest">Nome da Loja</label>
-            <input type="text" placeholder="Nome da sua empresa" class="w-full bg-white/5 border border-white/20 rounded p-4 text-white focus:border-white focus:bg-white/10 focus:outline-none transition-colors text-sm font-light placeholder-gray-500" required />
+            <label class="block text-[10px] sm:text-xs font-medium text-gray-500 dark:text-gray-400 uppercase mb-1 sm:mb-2 tracking-widest">Nome da Loja</label>
+            <input type="text" placeholder="Nome da sua empresa" class="w-full bg-gray-50 dark:bg-white/5 border border-gray-300 dark:border-white/20 rounded p-3 sm:p-4 text-gray-900 dark:text-white focus:border-black dark:focus:border-white focus:bg-white dark:focus:bg-white/10 focus:outline-none transition-colors text-sm font-light placeholder-gray-400" required />
           </div>
 
           <div>
-            <label class="block text-xs font-medium text-gray-400 uppercase mb-2 tracking-widest">E-mail Corporativo</label>
-            <input type="email" placeholder="seu@email.com" class="w-full bg-white/5 border border-white/20 rounded p-4 text-white focus:border-white focus:bg-white/10 focus:outline-none transition-colors text-sm font-light placeholder-gray-500" required />
+            <label class="block text-[10px] sm:text-xs font-medium text-gray-500 dark:text-gray-400 uppercase mb-1 sm:mb-2 tracking-widest">E-mail Corporativo</label>
+            <input type="email" placeholder="seu@email.com" class="w-full bg-gray-50 dark:bg-white/5 border border-gray-300 dark:border-white/20 rounded p-3 sm:p-4 text-gray-900 dark:text-white focus:border-black dark:focus:border-white focus:bg-white dark:focus:bg-white/10 focus:outline-none transition-colors text-sm font-light placeholder-gray-400" required />
           </div>
 
           <div>
-            <label class="block text-xs font-medium text-gray-400 uppercase mb-2 tracking-widest">Número de Contato</label>
-            <input type="tel" placeholder="(00) 00000-0000" class="w-full bg-white/5 border border-white/20 rounded p-4 text-white focus:border-white focus:bg-white/10 focus:outline-none transition-colors text-sm font-light placeholder-gray-500" required />
+            <label class="block text-[10px] sm:text-xs font-medium text-gray-500 dark:text-gray-400 uppercase mb-1 sm:mb-2 tracking-widest">Número de Contato</label>
+            <input type="tel" placeholder="(00) 00000-0000" class="w-full bg-gray-50 dark:bg-white/5 border border-gray-300 dark:border-white/20 rounded p-3 sm:p-4 text-gray-900 dark:text-white focus:border-black dark:focus:border-white focus:bg-white dark:focus:bg-white/10 focus:outline-none transition-colors text-sm font-light placeholder-gray-400" required />
           </div>
 
-          <button type="submit" class="w-full bg-white text-black hover:bg-gray-200 font-medium py-4 rounded transition-all transform hover:scale-[1.01] shadow-lg shadow-white/10 text-sm md:text-base tracking-widest uppercase mt-2">
+          <button type="submit" class="w-full bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 font-medium py-3 sm:py-4 rounded transition-all transform hover:scale-[1.01] shadow-lg shadow-black/10 dark:shadow-white/10 text-sm md:text-base tracking-widest uppercase mt-2">
             ENVIAR SOLICITAÇÃO
           </button>
 
