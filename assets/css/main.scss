@@ -3,27 +3,32 @@
 /* IMPORTANTE: Importar a fonte Inter */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
 
-/* 1. PALETA E CONFIGURAÇÕES GLOBAIS */
-:root {
-  --agne-black: #050505;
-  --agne-dark: #121212;
-  --agne-orange: #ff4500;
-  --agne-white: #ffffff;
-  --agne-gray: #a0a0a0;
-}
-
-html, body {
-  background-color: var(--agne-black);
-  color: var(--agne-white);
+/* 1. CONFIGURAÇÕES GLOBAIS E RESET */
+html {
   font-family: 'Inter', sans-serif;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+  scroll-behavior: smooth;
   
   /* FONTE FINA (Antialiasing) */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  
+  /* Padrão (Modo Claro) */
+  background-color: #f8f9fa; /* Cinza bem clarinho ou branco */
+  color: #1a1a1a; 
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Ajuste automático quando a classe .dark é ativada no HTML */
+html.dark body {
+  background-color: #050505;
+  color: #ffffff;
 }
 
 /* 2. TRAVA DE SEGURANÇA CONTRA NEGRITO */
@@ -32,16 +37,15 @@ b, strong {
 }
 
 /* 3. COMPORTAMENTO DESKTOP (Monitores > 1024px) */
+/* Efeito de "Slide" (Scroll Snap) */
 @media (min-width: 1024px) {
   html {
     scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
     height: 100vh;
     overflow-y: scroll;
   }
 
-  /* --- MUDANÇA AQUI: Tirei o 'footer' dessa regra --- */
-  /* Apenas as SEÇÕES principais ocupam a tela toda */
+  /* Seções ocupam a tela toda */
   section {
     height: 100vh;            
     width: 100%;
@@ -50,24 +54,19 @@ b, strong {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    /* Permite rolar dentro da seção se o conteúdo for maior que a tela */
     overflow-y: auto; 
     overflow-x: hidden;
   }
   
-  /* --- NOVA REGRA PARA O FOOTER --- */
-  /* O Rodapé agora tem altura livre (automática) */
+  /* Footer com altura automática */
   footer {
-     height: auto !important;     /* Altura natural do conteúdo */
-     min-height: auto !important; /* Remove obrigação de altura mínima */
+     height: auto !important;
+     min-height: auto !important;
      width: 100%;
      position: relative;
-     
-     /* O PULO DO GATO: */
-     /* 'end' faz o imã colar o final do rodapé no final da tela, */
-     /* permitindo que ele seja menor que a tela sem quebrar a rolagem */
-     scroll-snap-align: end; 
-     
-     display: block; /* Fluxo normal */
+     scroll-snap-align: end; /* Gruda no final */
+     display: block;
   }
 }
 
@@ -80,31 +79,44 @@ b, strong {
   }
 
   section, footer {
-    min-height: 100vh;
+    min-height: auto; /* Remove altura forçada */
     height: auto;
-    padding-bottom: 60px;
+    padding-bottom: 60px; /* Espaço para não cortar conteúdo */
     scroll-snap-align: none;
     display: block;
   }
   
-  /* Ajuste fino para o footer no mobile não precisar ser 100vh se não tiver conteúdo */
   footer {
-    min-height: auto; 
     padding-bottom: 40px;
   }
 }
 
-/* 5. SCROLLBAR CUSTOMIZADA */
+/* 5. SCROLLBAR CUSTOMIZADA (Cinza/Neutra) */
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
-  background: var(--agne-black); 
+  background: #f1f1f1; /* Claro no Light Mode */
 }
+
+html.dark ::-webkit-scrollbar-track {
+  background: #000000; /* Preto no Dark Mode */
+}
+
 ::-webkit-scrollbar-thumb {
-  background: #333; 
+  background: #c1c1c1; 
   border-radius: 4px;
 }
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #333333; 
+}
+
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--agne-orange); 
+  background: #a0a0a0;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #666666; 
 }
