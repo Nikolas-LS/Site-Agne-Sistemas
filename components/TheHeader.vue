@@ -7,8 +7,7 @@
         : 'bg-transparent border-transparent py-4 sm:py-6'
     ]"
   >
-    <div class="container mx-auto px-4 sm:px-6 flex justify-between items-center relative">
-      
+    <div class="container mx-auto px-4 sm:px-6 flex justify-between items-center relative">     
       <div class="z-50">
         <a href="#hero" class="block">
           <img 
@@ -19,7 +18,6 @@
           />
         </a>
       </div>
-
       <nav class="hidden lg:flex items-center space-x-8">
         <a v-for="link in links" :key="link.text" :href="link.href" 
            class="text-xs uppercase tracking-widest font-medium transition-colors relative group"
@@ -31,8 +29,7 @@
           <span class="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full"
                 :class="isScrolled ? 'bg-black dark:bg-white' : 'bg-white'">
           </span>
-        </a>
-        
+        </a>       
         <button 
           @click="toggleTheme" 
           class="p-2 rounded-full transition-colors"
@@ -44,9 +41,7 @@
           <svg v-if="isDark" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
           <svg v-else class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
         </button>
-
         <div class="h-6 w-px transition-colors" :class="isScrolled ? 'bg-gray-300 dark:bg-white/20' : 'bg-white/20'"></div>
-
         <a href="#contact" 
            class="px-6 py-2 rounded text-xs font-medium uppercase tracking-widest transition transform hover:scale-105 shadow-lg"
            :class="isScrolled 
@@ -56,7 +51,6 @@
           Fale Conosco
         </a>
       </nav>
-
       <button @click="mobileMenuOpen = true" class="lg:hidden z-50 focus:outline-none p-1 sm:p-2"
         :class="isScrolled ? 'text-black dark:text-white' : 'text-white'"
       >
@@ -64,11 +58,9 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
-
     </div>
 
-    <teleport to="body">
-      
+    <teleport to="body">     
       <transition
         enter-active-class="transition-opacity duration-500 ease-in-out"
         enter-from-class="opacity-0"
@@ -100,8 +92,7 @@
           aria-modal="true"
         >
           <div class="flex items-center justify-between mb-6 sm:mb-8">
-            <img src="/logobranco.png" alt="AGNE" class="h-6 sm:h-8 w-auto invert dark:invert-0 opacity-80" />
-            
+            <img src="/logobranco.png" alt="AGNE" class="h-6 sm:h-8 w-auto invert dark:invert-0 opacity-80" />     
             <div class="flex items-center gap-2">
               <button 
                 @click="toggleTheme" 
@@ -110,7 +101,6 @@
                 <svg v-if="isDark" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                 <svg v-else class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
               </button>
-
               <button @click="mobileMenuOpen = false" class="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors p-2">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -118,7 +108,6 @@
               </button>
             </div>
           </div>
-
           <nav class="flex-1">
             <ul class="space-y-3 sm:space-y-4">
               <li v-for="link in links" :key="link.text">
@@ -129,14 +118,12 @@
                 >
                   <div class="p-2 rounded-lg bg-gray-100 dark:bg-white/5 text-gray-500 dark:text-gray-400 group-hover:bg-black dark:group-hover:bg-white group-hover:text-white dark:group-hover:text-black transition-colors">
                     <span v-html="link.icon"></span>
-                  </div>
-                  
+                  </div>                  
                   <span>{{ link.text }}</span>
                 </a>
               </li>
             </ul>
           </nav>
-
           <div class="mt-auto space-y-3 sm:space-y-4 pt-4 sm:pt-6 border-t border-gray-200 dark:border-white/10">
             <a href="https://wa.me/555135884111" target="_blank" class="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5 hover:bg-gray-100 dark:hover:bg-white/10 transition-colors group">
               <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-200 dark:bg-white/10 flex items-center justify-center text-gray-700 dark:text-white group-hover:bg-black group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-black transition-colors">
@@ -147,7 +134,6 @@
                 <span class="block text-xs sm:text-sm font-bold text-gray-900 dark:text-white">Central de Atendimento</span>
               </div>
             </a>
-
             <a href="#contact" @click="mobileMenuOpen = false" class="block w-full text-center bg-black dark:bg-white text-white dark:text-black py-3 sm:py-4 rounded-xl font-bold uppercase tracking-widest text-xs sm:text-sm hover:bg-gray-800 dark:hover:bg-gray-200 transition shadow-lg">
               Fale Conosco
             </a>

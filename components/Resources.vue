@@ -1,19 +1,15 @@
 <template>
-  <section id="resources" class="relative w-full min-h-screen bg-gray-100 dark:bg-[#050505] py-20 sm:py-24 overflow-hidden border-t border-gray-200 dark:border-white/5 transition-colors duration-300">
-    
+  <section id="resources" class="relative w-full min-h-screen bg-gray-100 dark:bg-[#050505] py-20 sm:py-24 overflow-hidden border-t border-gray-200 dark:border-white/5 transition-colors duration-300">   
     <div class="absolute inset-0 pointer-events-none">
       <div class="absolute left-0 top-1/4 w-64 h-64 sm:w-96 sm:h-96 bg-gray-300 dark:bg-white rounded-full blur-[100px] sm:blur-[150px] opacity-20 dark:opacity-5 transition-colors duration-300"></div>
       <div class="absolute right-0 bottom-1/4 w-64 h-64 sm:w-96 sm:h-96 bg-gray-400 dark:bg-gray-800 rounded-full blur-[100px] sm:blur-[150px] opacity-20 dark:opacity-5 transition-colors duration-300"></div>
     </div>
-
-    <div class="container mx-auto px-4 sm:px-6 relative z-10">
-      
+    <div class="container mx-auto px-4 sm:px-6 relative z-10">    
       <div class="text-center mb-10 sm:mb-16" data-aos="fade-up">
         <div class="inline-flex items-center space-x-3 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-full px-4 py-1.5 sm:px-5 sm:py-2 mb-4 sm:mb-6 backdrop-blur-sm transition-colors duration-300">
           <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-gray-800 dark:bg-white animate-pulse shadow-sm dark:shadow-[0_0_10px_rgba(255,255,255,0.8)]"></span>
           <span class="text-[10px] sm:text-sm font-medium text-gray-600 dark:text-gray-300 uppercase tracking-widest">Recursos</span>
-        </div>
-        
+        </div>       
         <h2 class="text-2xl sm:text-3xl md:text-5xl font-medium tracking-tight text-gray-900 dark:text-white mb-4 transition-colors duration-300">
           Poder Total para <br/>
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-500 dark:from-white dark:to-gray-500">
@@ -21,17 +17,13 @@
           </span>
         </h2>
       </div>
-
-      <div class="relative px-0 md:px-12">
-        
+      <div class="relative px-0 md:px-12">       
         <button class="custom-prev absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 flex items-center justify-center text-gray-700 dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black hover:scale-110 transition-all duration-300 backdrop-blur-md hidden md:flex shadow-md dark:shadow-none">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
         </button>
-
         <button class="custom-next absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 flex items-center justify-center text-gray-700 dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black hover:scale-110 transition-all duration-300 backdrop-blur-md hidden md:flex shadow-md dark:shadow-none">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
         </button>
-
         <swiper
           :modules="[SwiperAutoplay, SwiperPagination, SwiperNavigation]"
           :slides-per-view="1"
@@ -53,20 +45,16 @@
           class="features-swiper pb-12 sm:pb-16 !overflow-visible"
         >
           <swiper-slide v-for="(card, index) in cards" :key="index" class="h-auto py-6 sm:py-10">
-            <div class="card-content h-full bg-white dark:bg-[#0f0f0f] border border-gray-200 dark:border-white/10 rounded-2xl p-6 sm:p-8 flex flex-col transition-all duration-500 ease-out group relative overflow-hidden shadow-lg dark:shadow-none">
-              
+            <div class="card-content h-full bg-white dark:bg-[#0f0f0f] border border-gray-200 dark:border-white/10 rounded-2xl p-6 sm:p-8 flex flex-col transition-all duration-500 ease-out group relative overflow-hidden shadow-lg dark:shadow-none">             
               <div class="absolute top-0 right-0 w-32 h-32 bg-gray-200 dark:bg-white rounded-full blur-[80px] opacity-0 group-hover:opacity-20 dark:group-hover:opacity-10 transition-opacity duration-500 pointer-events-none"></div>
-
               <div class="w-12 h-12 sm:w-14 sm:h-14 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl flex items-center justify-center mb-4 sm:mb-6 text-gray-900 dark:text-white group-hover:bg-black group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-black transition-all duration-300 shrink-0 icon-container">
                 <svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" :d="card.iconPath"></path>
                 </svg>
               </div>
-
               <h3 class="text-base sm:text-lg font-medium text-gray-900 dark:text-white uppercase tracking-wide mb-3 sm:mb-4 transition-colors">
                 {{ card.title }}
               </h3>
-
               <div class="text-gray-600 dark:text-gray-400 text-sm font-light leading-relaxed space-y-2 flex-grow transition-colors">
                 <template v-if="Array.isArray(card.content)">
                   <ul class="space-y-2">
@@ -80,7 +68,6 @@
                   <p>{{ card.content }}</p>
                 </template>
               </div>
-
             </div>
           </swiper-slide>
         </swiper>
@@ -171,22 +158,18 @@ const cards = [
 </script>
 
 <style scoped>
-/* REGRAS DE ESCALA PARA O CARD ATIVO */
-
 /* Mobile First (Telas pequenas): Escala muito sutil para não cortar */
 .swiper-slide-active .card-content {
-  transform: scale(1.02); /* Apenas 2% de aumento */
+  transform: scale(1.02); 
   z-index: 10;
 }
 
 /* Telas médias/grandes (md = 768px): Escala maior como era antes */
 @media (min-width: 768px) {
   .swiper-slide-active .card-content {
-    transform: scale(1.1); /* 10% de aumento */
+    transform: scale(1.1);
   }
 }
-
-/* Estilos de Cores (Mantidos) */
 
 /* Light Mode Active */
 :global(:root:not(.dark)) .swiper-slide-active .card-content {

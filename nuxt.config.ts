@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
 
-  // Gera site estático (Essencial para GitHub Pages)
+  // Gera site estático
   ssr: false,
 
   modules: [
@@ -26,8 +26,11 @@ export default defineNuxtConfig({
   ],
 
   app: {
-    // IMPORTANTE: Se o nome do seu repositório no GitHub for diferente, mude aqui!
-    // Exemplo: se for 'site-agne', coloque '/site-agne/'
-    baseURL: '/Site-Agne-Sistemas/'
+    head: {
+      title: 'AGNE Sistemas', // Aqui você pode definir o título padrão da aba
+      link: [
+        { rel: 'icon', type: 'image/png', href: '/faviconV2.png' }
+      ]
+    }
   }
 })

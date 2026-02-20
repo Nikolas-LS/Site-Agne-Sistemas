@@ -1,9 +1,9 @@
 /* assets/css/main.scss */
 
-/* IMPORTANTE: Importar a fonte Inter */
+/* Importar a fonte Inter */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
 
-/* 1. CONFIGURAÇÕES GLOBAIS E RESET */
+/* CONFIGURAÇÕES GLOBAIS E RESET */
 html {
   font-family: 'Inter', sans-serif;
   scroll-behavior: smooth;
@@ -20,7 +20,7 @@ body {
   overflow-x: hidden;
   
   /* Padrão (Modo Claro) */
-  background-color: #f8f9fa; /* Cinza bem clarinho ou branco */
+  background-color: #f8f9fa; 
   color: #1a1a1a; 
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -31,13 +31,11 @@ html.dark body {
   color: #ffffff;
 }
 
-/* 2. TRAVA DE SEGURANÇA CONTRA NEGRITO */
 b, strong {
   font-weight: 500 !important; 
 }
 
-/* 3. COMPORTAMENTO DESKTOP (Monitores > 1024px) */
-/* Efeito de "Slide" (Scroll Snap) */
+/* COMPORTAMENTO DESKTOP (Monitores > 1024px) */
 @media (min-width: 1024px) {
   html {
     scroll-snap-type: y mandatory;
@@ -54,7 +52,6 @@ b, strong {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* Permite rolar dentro da seção se o conteúdo for maior que a tela */
     overflow-y: auto; 
     overflow-x: hidden;
   }
@@ -65,12 +62,12 @@ b, strong {
      min-height: auto !important;
      width: 100%;
      position: relative;
-     scroll-snap-align: end; /* Gruda no final */
+     scroll-snap-align: end;
      display: block;
   }
 }
 
-/* 4. COMPORTAMENTO MOBILE (Celulares e Tablets) */
+/* COMPORTAMENTO MOBILE (Celulares e Tablets) */
 @media (max-width: 1023px) {
   html {
     scroll-snap-type: none;
@@ -79,9 +76,9 @@ b, strong {
   }
 
   section, footer {
-    min-height: auto; /* Remove altura forçada */
+    min-height: auto; 
     height: auto;
-    padding-bottom: 60px; /* Espaço para não cortar conteúdo */
+    padding-bottom: 60px; 
     scroll-snap-align: none;
     display: block;
   }
@@ -91,7 +88,6 @@ b, strong {
   }
 }
 
-/* 5. SCROLLBAR CUSTOMIZADA (Cinza/Neutra) */
 ::-webkit-scrollbar {
   width: 8px;
 }
